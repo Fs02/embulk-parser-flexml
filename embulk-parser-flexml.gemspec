@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "embulk-parser-flexml"
-  spec.version       = "0.0.1"
+  spec.version       = "0.0.2"
   spec.authors       = ["Surya Asriadie"]
   spec.email         = ["surya.asriadie@gmail.com"]
   spec.summary       = %q{Flexible Embulk parser plugin for XML}
@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "rexml", "~> 3.1"
+  spec.add_dependency "rexml", "~> 3.1.9"
   spec.add_development_dependency "bundler", "~> 1.0"
   spec.add_development_dependency 'embulk', ['>= 0.9.15']
   spec.add_development_dependency "rake", "~> 10.0"

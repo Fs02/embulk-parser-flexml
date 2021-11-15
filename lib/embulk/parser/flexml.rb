@@ -55,7 +55,7 @@ module Embulk
               @page_builder.add(values)
             end
           rescue Exception => e
-            puts "=>>>> ERROR: #{e}"
+            Embulk.logger.error e
           end
         end
 
