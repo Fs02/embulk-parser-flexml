@@ -1,9 +1,9 @@
 require 'rexml/document'
 
+include REXML
+
 module Embulk
   module Parser
-    include REXML
-
     class Flexml < ParserPlugin
       Plugin.register_parser("flexml", self)
 
