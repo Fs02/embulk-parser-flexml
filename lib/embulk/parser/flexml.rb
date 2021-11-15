@@ -38,8 +38,6 @@ module Embulk
               values = @task[:schema].map do |f, c|
                 row = if c.has_key?("xpath")
                     XPath.first(e, c["xpath"])
-                  elsif c.has_key?("element")
-                    e.element(c["element"])
                   else
                     e
                   end
