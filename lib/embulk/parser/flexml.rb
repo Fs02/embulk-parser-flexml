@@ -5,7 +5,7 @@ module Embulk
     include REXML
 
     class Flexml < ParserPlugin
-      Plugin.register_parser("xml3", self)
+      Plugin.register_parser("flexml", self)
 
       def self.transaction(config, &control)
         schema = config.param("schema", :array)
