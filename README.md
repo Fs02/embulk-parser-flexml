@@ -25,7 +25,7 @@ Flexible xml parser for embulk. read data using xpath and from attributes
 ```yaml
 parser:
     type: flexml
-    root: Class/Users/User
+    root: Team/Players/Player
     schema:
         - { name: name, type: string, attribute: name }
         - { name: age, type: long, attribute: age }
@@ -38,15 +38,15 @@ parser:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<Class>
-    <Users>
-        <User name="Locatelli" age="23">
+<Team>
+    <Players>
+        <Player name="Locatelli" age="23">
             <About>
                 Manuel Locatelli Cavaliere OMRI (born 8 January 1998) is an Italian professional footballer who plays as a midfielder for Serie A club Juventus, on loan from Serie A club Sassuolo, and the Italy national team.
             </About>
             <SocialMedia type="facebook" url="https://www.facebook.com/locamanuel73"/>
             <SocialMedia type="twitter" url="https://twitter.com/locamanuel73"/>
-        </User>
-    </Users>
-</Class>
+        </Player>
+    </Players>
+</Team>
 ```
