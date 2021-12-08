@@ -53,7 +53,7 @@ module Embulk
               @page_builder.add(values)
             end
           rescue Exception => e
-            Embulk.logger.error e
+            Embulk.logger.error "Failed to parse xml: #{e.message}"
           end
         end
 
