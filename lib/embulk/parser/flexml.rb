@@ -14,7 +14,7 @@ module Embulk
           if s["type"] == "timestamp"
             memo[s["name"]].merge!({
               "format" => s["format"],
-              "timezone" => s["timezone"] || "+0900"
+              "timezone" => s["timezone"]
             })
           end
           memo
@@ -74,6 +74,8 @@ module Embulk
         when "timestamp"
           unless v.empty?
             dest = Time.strptime(v, config["format"])
+            return dest.utc if config["timezone"].empty?
+
             utc_offset = dest.utc_offset
             zone_offset = Time.zone_offset(config["timezone"])
             dest.localtime(zone_offset) + utc_offset - zone_offset

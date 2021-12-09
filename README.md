@@ -17,6 +17,9 @@ Flexible xml parser for embulk. read data using xpath and from attributes
     - **type**: type of the attribute (string, required)
     - **attribute**: if specified, value of this attribute will be the output, otherwise child will be the output (string, optional)
     - **xpath**: child element to select (string, required)
+    - **format**: timestamp format to parse (string, required)
+    - **timezone**: timestamp will be parsed in this timezone (string, optional)
+
 
 ## Example
 
