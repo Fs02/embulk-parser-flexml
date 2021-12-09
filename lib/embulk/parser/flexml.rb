@@ -74,7 +74,7 @@ module Embulk
         when "timestamp"
           unless v.empty?
             dest = Time.strptime(v, config["format"])
-            return dest.utc if config["timezone"].empty?
+            return dest.utc if config["timezone"].nil?
 
             utc_offset = dest.utc_offset
             zone_offset = Time.zone_offset(config["timezone"])
