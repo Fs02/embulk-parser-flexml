@@ -43,9 +43,9 @@ module Embulk
                   end
 
                 val = if c.has_key?("attribute")
-                  row.attributes[c["attribute"]]
+                  row&.attributes&.dig(c["attribute"])
                 else
-                  row.text
+                  row&.text
                 end
                 convert(val, c)
               end
