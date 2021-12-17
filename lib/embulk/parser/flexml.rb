@@ -42,12 +42,16 @@ module Embulk
                     e
                   end
 
-                val = if c.has_key?("attribute")
-                  row&.attributes&.dig(c["attribute"])
+                unless row.nil?
+                  val = if c.has_key?("attribute")
+                    row.attributes[c["attribute"]]
+                  else
+                    row.text
+                  end
+                  convert(val, c)
                 else
-                  row&.text
+                  nil
                 end
-                convert(val, c)
               end
 
               @page_builder.add(values)
